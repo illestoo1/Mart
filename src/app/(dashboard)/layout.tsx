@@ -127,7 +127,7 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
                 {isOpen && <span className="text-white">Customers</span>}
               </Link>
 
-              <Link href="/" className="flex items-center space-x-4">
+              <Link href="/statistics" className="flex items-center space-x-4">
                 <div className="text-white">
                   <span className="hover:bg-white ">
                     <svg
@@ -143,10 +143,10 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
                     </svg>
                   </span>
                 </div>
-                {isOpen && <span className="text-white">Home</span>}
+                {isOpen && <span className="text-white">Statistics</span>}
               </Link>
 
-              <Link href="/" className="flex items-center space-x-4">
+              <Link href="/history" className="flex items-center space-x-4">
                 <div className="text-white">
                   <span className="hover:bg-white ">
                     <svg
@@ -155,17 +155,14 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
                       height="24"
                       viewBox="0 0 24 24"
                     >
-                      <g fill="none" fill-rule="evenodd">
-                        <path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
-                        <path
-                          fill="currentColor"
-                          d="M10.5 2a8.5 8.5 0 1 0 5.262 15.176l3.652 3.652a1 1 0 0 0 1.414-1.414l-3.652-3.652A8.5 8.5 0 0 0 10.5 2M4 10.5a6.5 6.5 0 1 1 13 0a6.5 6.5 0 0 1-13 0"
-                        />
-                      </g>
+                      <path
+                        fill="currentColor"
+                        d="M13 3a9 9 0 0 0-9 9H1l3.89 3.89l.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7s-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.95 8.95 0 0 0 13 21a9 9 0 0 0 0-18m-1 5v5l4.25 2.52l.77-1.28l-3.52-2.09V8z"
+                      />
                     </svg>
                   </span>
                 </div>
-                {isOpen && <span className="text-white">Search</span>}
+                {isOpen && <span className="text-white">History</span>}
               </Link>
 
               <Link
@@ -198,21 +195,48 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
 
               <Link href="/" className="flex items-center space-x-4">
                 <div className="text-white">
-                  <span className="hover:bg-white ">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <g
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
                     >
                       <path
-                        fill="currentColor"
-                        d="M22 12v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h3.17A3 3 0 0 1 6 5a3 3 0 0 1 3-3c1 0 1.88.5 2.43 1.24v-.01L12 4l.57-.77v.01C13.12 2.5 14 2 15 2a3 3 0 0 1 3 3a3 3 0 0 1-.17 1H21a2 2 0 0 1 2 2v3a1 1 0 0 1-1 1M4 20h7v-8H4zm16 0v-8h-7v8zM9 4a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1m6 0a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1M3 8v2h8V8zm10 0v2h8V8z"
-                      />
-                    </svg>
-                  </span>
+                        stroke-dasharray="40"
+                        stroke-dashoffset="40"
+                        d="M10.76 13.24c-2.34 -2.34 -2.34 -6.14 0 -8.49c2.34 -2.34 6.14 -2.34 8.49 0c2.34 2.34 2.34 6.14 0 8.49c-2.34 2.34 -6.14 2.34 -8.49 0Z"
+                      >
+                        <animate
+                          fill="freeze"
+                          attributeName="stroke-dashoffset"
+                          dur="0.5s"
+                          values="40;0"
+                        />
+                      </path>
+                      <path
+                        stroke-dasharray="12"
+                        stroke-dashoffset="12"
+                        d="M10.5 13.5l-7.5 7.5"
+                      >
+                        <animate
+                          fill="freeze"
+                          attributeName="stroke-dashoffset"
+                          begin="0.5s"
+                          dur="0.2s"
+                          values="12;0"
+                        />
+                      </path>
+                    </g>
+                  </svg>
                 </div>
-                {isOpen && <span className="text-white">Home</span>}
+                {isOpen && <span className="text-white">Search</span>}
               </Link>
             </div>
           </div>

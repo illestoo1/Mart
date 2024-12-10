@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
+
 interface FormData {
   campaignName: string;
   brand: string;
@@ -108,15 +109,13 @@ const CampaignForm: React.FC = () => {
               name="channels"
               placeholder="Channels (e.g., Email, SMS)"
               value={formData.channels.join(", ")}
-              onChange={(e) =>
-                handleInputChange({
-                  ...e,
-                  target: {
-                    name: "channels",
-                    value: e.target.value.split(","),
-                  },
-                })
-              }
+              onChange={(e) => {
+                const channelArray = e.target.value
+                  .split(",")
+                  .map((channel) => channel.trim())
+                  .filter((channel) => channel); // Filter out empty strings
+                setFormData({ ...formData, channels: channelArray });
+              }}
               className="border rounded-md p-3 w-full focus:ring-2 focus:ring-blue-500"
             />
           </div>
